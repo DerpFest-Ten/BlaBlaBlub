@@ -140,8 +140,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.camera.privapp.list=com.oneplus.camera,org.lineageos.snap,com.google.android.GoogleCamera \
-    vendor.camera.aux.packagelist=com.oneplus.camera,org.lineageos.snap,com.google.android.GoogleCamera \
+    persist.vendor.camera.privapp.list=com.oneplus.camera,com.google.android.GoogleCamera \
+    vendor.camera.aux.packagelist=com.oneplus.camera,com.google.android.GoogleCamera \
     persist.camera.mobicat=2 \
     persist.camera.stats.debugexif=3080192 \
     persist.ts.rtmakeup=false \
@@ -363,12 +363,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.set_idle_timer_ms=9000
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.disable_backpressure=1 \
-    debug.sf.early_phase_offset_ns=1500000 \
-    debug.sf.early_app_phase_offset_ns=1500000 \
+    debug.sf.early_phase_offset_ns=500000 \
+    debug.sf.early_app_phase_offset_ns=500000 \
     debug.sf.early_gl_phase_offset_ns=3000000 \
     debug.sf.early_gl_app_phase_offset_ns=15000000 \
-    debug.sf.enable_gl_backpressure=1
+    debug.sf.enable_gl_backpressure=1 \
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 
 # Timeservice
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -394,3 +394,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Wi-Fi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
+
+# Device maintainer
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.derp.maintainer="Alexander Brunswig"
+
+# Build fingerprint
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.fingerprint=google/walleye/walleye:8.1.0/OPM1.171019.021/4565141:user/release-keys
